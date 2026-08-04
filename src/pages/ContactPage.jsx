@@ -142,9 +142,7 @@ export default function ContactPage() {
             {/* Info Sidebar */}
             <Reveal delay={0.15} className="lg:col-span-2 space-y-5">
               <div className="rounded-3xl overflow-hidden shadow-xl" style={{ height: "200px" }}>
-                <img src="/officers-squad.jpg" alt="Cheston team"
-                  className="w-full h-full object-cover object-top"
-                  onError={e => { e.target.style.background = "#e2e8f0"; }} />
+                
               </div>
 
               <div className="rounded-3xl p-7 space-y-4" style={{ background: "linear-gradient(160deg,#0f172a,#1e1b4b)" }}>

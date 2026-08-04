@@ -135,9 +135,7 @@ export default function ClientsPage() {
           <Reveal delay={0.12}>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div className="rounded-3xl overflow-hidden shadow-lg" style={{ height: "240px" }}>
-                <img src="/officers-squad.jpg" alt="Security team"
-                  className="w-full h-full object-cover"
-                  onError={e => { e.target.style.background = "#e2e8f0"; }} />
+                
               </div>
               <div className="rounded-3xl overflow-hidden shadow-lg" style={{ height: "240px" }}>
                 <img src="/clients-officer.jpg" alt="Officer on duty"

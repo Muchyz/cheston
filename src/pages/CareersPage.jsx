@@ -51,9 +51,7 @@ export default function CareersPage() {
     <div style={{ paddingTop: "80px" }}>
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ minHeight: "340px" }}>
-        <img src="/officers-squad.jpg" alt="CHESTON Security Careers"
-          className="absolute inset-0 w-full h-full object-cover"
-          onError={e => { e.target.style.background = "#0f172a"; }} />
+        
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(15,23,42,0.92),rgba(30,27,75,0.88))" }} />
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-24">
           <span className="inline-block bg-white/10 text-white text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4 border border-white/20">Careers</span>
@@ -128,9 +126,7 @@ export default function CareersPage() {
           {/* How to Apply */}
           <Reveal delay={0.15}>
             <div className="rounded-3xl overflow-hidden relative shadow-2xl" style={{ minHeight: "240px" }}>
-              <img src="/officers-squad.jpg" alt="Apply to Cheston"
-                className="absolute inset-0 w-full h-full object-cover"
-                onError={e => { e.target.style.background = "#0f172a"; }} />
+              
               <div className="relative z-10 p-12 md:p-16" style={{ background: "linear-gradient(135deg,rgba(220,38,38,0.90),rgba(30,58,138,0.84))" }}>
                 <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "'DM Serif Display',serif" }}>How to Apply</h2>
                 <p className="text-white/80 mb-6 max-w-xl">Send your CV and a brief cover letter to our HR team. Please indicate the position you're applying for in the subject line.</p>

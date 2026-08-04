@@ -51,9 +51,7 @@ export default function TeamPage() {
     <div style={{ paddingTop: "80px" }}>
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ minHeight: "340px" }}>
-        <img src="/officers-squad.jpg" alt="CHESTON Security Team"
-          className="absolute inset-0 w-full h-full object-cover"
-          onError={e => { e.target.style.background = "#0f172a"; }} />
+        
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(15,23,42,0.92),rgba(30,27,75,0.88))" }} />
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
           <span className="inline-block bg-white/10 text-white text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4 border border-white/20">Our Team</span>
@@ -93,9 +91,7 @@ export default function TeamPage() {
           {/* Leadership Banner */}
           <Reveal delay={0.15}>
             <div className="rounded-3xl overflow-hidden relative shadow-2xl mb-16" style={{ minHeight: "280px" }}>
-              <img src="/officers-squad.jpg" alt="CHESTON Security Leadership"
-                className="absolute inset-0 w-full h-full object-cover"
-                onError={e => { e.target.style.background = "#0f172a"; }} />
+              
               <div className="relative z-10 grid md:grid-cols-2"
                 style={{ background: "linear-gradient(90deg,rgba(15,23,42,0.94),rgba(30,58,138,0.78))" }}>
                 <div className="p-12 md:p-16">
@@ -142,9 +138,7 @@ export default function TeamPage() {
             <Reveal delay={0.1}>
               <div className="space-y-4">
                 <div className="rounded-3xl overflow-hidden shadow-xl" style={{ aspectRatio: "4/3" }}>
-                  <img src="/officers-squad.jpg" alt="Security team"
-                    className="w-full h-full object-cover"
-                    onError={e => { e.target.style.background = "#e2e8f0"; }} />
+                  
                 </div>
                 <div className="grid grid-cols-3 gap-4">
                   {[

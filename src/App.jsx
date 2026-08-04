@@ -921,7 +921,7 @@ function WhyUs() {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl" style={{ aspectRatio: "4/3" }}>
             </div>
-              <img src="/officers-squad.jpg" alt="CHESTON Security team" className="w-full h-full object-cover" onError={e => { e.target.style.background="#1e293b"; }} />
+              
           </div>
         </Reveal>
       </div>
@@ -971,9 +971,7 @@ function Team() {
 
         <Reveal delay={0.15}>
           <div className="rounded-3xl overflow-hidden relative shadow-2xl" style={{ minHeight: "260px" }}>
-            <img src="/officers-squad.jpg" alt="CHESTON Security team lineup"
-              className="w-full h-full object-cover absolute inset-0" style={{ height: "100%" }}
-              onError={e => { e.target.style.background="#0f172a"; }} />
+            
             <div className="relative z-10 grid md:grid-cols-2 gap-0"
               style={{ background: "linear-gradient(90deg,rgba(15,23,42,0.92) 0%,rgba(30,58,138,0.75) 100%)" }}>
               <div className="p-10 md:p-14">
@@ -1123,9 +1121,7 @@ function Clients() {
         <Reveal delay={0.12}>
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="rounded-3xl overflow-hidden shadow-lg" style={{ height: "220px" }}>
-              <img src="/officers-squad.jpg" alt="CHESTON Security squad"
-                className="w-full h-full object-cover"
-                onError={e => { e.target.style.background="#e2e8f0"; }} />
+              
             </div>
             <div className="rounded-3xl overflow-hidden shadow-lg" style={{ height: "220px" }}>
               <img src="/clients-officer.jpg" alt="CHESTON Security officer on duty"
@@ -1257,9 +1253,7 @@ function Contact() {
             </Reveal>
             <Reveal delay={0.15} className="lg:col-span-2 space-y-4">
               <div className="rounded-3xl overflow-hidden shadow-xl" style={{ height: "180px" }}>
-                <img src="/officers-squad.jpg" alt="CHESTON Security officers"
-                  className="w-full h-full object-cover object-top"
-                  onError={e => { e.target.style.background="#e2e8f0"; }} />
+                
               </div>
               <div className="rounded-3xl p-6 space-y-3" style={{ background: "linear-gradient(160deg,#0f172a,#1e1b4b)" }}>
                 <h4 className="text-white font-bold text-sm tracking-wide mb-3">Get In Touch</h4>

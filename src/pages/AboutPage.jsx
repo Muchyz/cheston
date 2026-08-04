@@ -41,9 +41,7 @@ export default function AboutPage() {
     <div style={{ paddingTop: "80px" }}>
       {/* Hero Banner */}
       <div className="relative overflow-hidden" style={{ minHeight: "320px", background: "linear-gradient(135deg,#0f172a,#1e1b4b)" }}>
-        <img src="/officers-squad.jpg" alt="CHESTON Security Team"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-          onError={e => { e.target.style.display = "none"; }} />
+        
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
           <span className="inline-block bg-white/10 text-white text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4 border border-white/20">
             About CHESTON Security
