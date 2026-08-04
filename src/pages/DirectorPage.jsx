@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
-import { ArrowRight, CheckCircle, Award } from "lucide-react";
+import { ArrowRight, CheckCircle, User } from "lucide-react";
 
 function useReveal(threshold = 0.12) {
   const ref = useRef(null);
@@ -35,19 +35,14 @@ export default function DirectorPage() {
           <div className="grid lg:grid-cols-3 gap-12 items-start">
             <Reveal>
               <div className="space-y-4">
-                <div className="rounded-3xl overflow-hidden shadow-2xl" style={{ aspectRatio: "3/4" }}>
-                  <img src="/director-duncan.jpg" alt="Duncan O. Ngao"
-                    className="w-full h-full object-cover object-top"
-                    onError={e => { e.target.style.background = "#1e293b"; }} />
+                <div className="rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center"
+                  style={{ aspectRatio: "3/4", background: "#1e293b" }}>
+                  <User className="w-20 h-20 text-white/20" />
                 </div>
                 <div className="p-5 rounded-2xl text-center" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                  <div className="text-white font-bold text-lg">Duncan O. Ngao</div>
-                  <div className="text-red-400 text-sm font-medium mt-1">Founder & Director</div>
-                  <div className="text-white/40 text-xs mt-1">CHESTON security solutions limited</div>
-                  <div className="flex items-center justify-center gap-2 mt-3 p-3 rounded-xl" style={{ background: "rgba(255,255,255,0.06)" }}>
-                    <Award className="w-4 h-4 text-amber-400" />
-                    <span className="text-white/70 text-xs font-medium">35+ Years Industry Experience</span>
-                  </div>
+                  <div className="text-white font-bold text-lg">Benjamin Rotich</div>
+                  <div className="text-red-400 text-sm font-medium mt-1">Director</div>
+                  <div className="text-white/40 text-xs mt-1">Cheston Security Services Limited</div>
                 </div>
               </div>
             </Reveal>
@@ -61,25 +56,24 @@ export default function DirectorPage() {
                 </div>
 
                 <blockquote className="text-white text-2xl leading-relaxed font-medium" style={{ fontFamily: "'DM Serif Display',serif" }}>
-                  "𝘐 𝘧𝘰𝘶𝘯𝘥𝘦𝘥 𝘉𝘐𝘎 𝘋𝘌𝘌 𝘴𝘦𝘤𝘶𝘳𝘪𝘵𝘺 𝘴𝘰𝘭𝘶𝘵𝘪𝘰𝘯𝘴 𝘭𝘪𝘮𝘪𝘵𝘦𝘥 𝘵𝘰 𝘱𝘳𝘰𝘷𝘪𝘥𝘦 𝘲𝘶𝘢𝘭𝘪𝘵𝘺 𝘴𝘦𝘳𝘷𝘪𝘤𝘦𝘴 𝘵𝘰 𝘰𝘶𝘳 𝘤𝘭𝘪𝘦𝘯𝘵𝘴 𝘢𝘴 𝘸𝘦 𝘴𝘢𝘧𝘦𝘨𝘶𝘢𝘳𝘥 𝘵𝘩𝘦𝘪𝘳 𝘩𝘰𝘮𝘦𝘴, 𝘸𝘰𝘳𝘬 𝘱𝘳𝘦𝘮𝘪𝘴𝘦𝘴 𝘢𝘯𝘥 𝘱𝘳𝘰𝘥𝘶𝘤𝘵𝘴. 𝘞𝘦 𝘢𝘳𝘦 𝘱𝘭𝘦𝘢𝘴𝘦𝘥 𝘢𝘯𝘥 𝘩𝘰𝘯𝘰𝘳𝘦𝘥 𝘵𝘰 𝘤𝘰𝘯𝘵𝘳𝘪𝘣𝘶𝘵𝘦 𝘢𝘯𝘥 𝘴𝘶𝘱𝘱𝘰𝘳𝘵 𝘵𝘩𝘪𝘴 𝘫𝘰𝘶𝘳𝘯𝘦𝘺 𝘸𝘪𝘵𝘩 𝘰𝘶𝘳 𝘦𝘹𝘱𝘦𝘳𝘵𝘪𝘴𝘦."
+                  "Security is a promise you make to a client, and we take that promise seriously. Every officer we deploy carries the trust of the people and property they protect."
                 </blockquote>
 
                 <div className="space-y-4 text-white/70 leading-relaxed">
-                  <p>𝘐𝘯 𝘰𝘶𝘳 𝘊𝘰𝘮𝘱𝘢𝘯𝘺, 𝘸𝘦 𝘸𝘪𝘭𝘭 𝘯𝘦𝘷𝘦𝘳 𝘤𝘰𝘮𝘱𝘳𝘰𝘮𝘪𝘴𝘦 𝘰𝘯 𝘵𝘩𝘦 𝘲𝘶𝘢𝘭𝘪𝘵𝘺 𝘰𝘧 𝘰𝘶𝘳 𝘴𝘦𝘳𝘷𝘪𝘤𝘦 𝘢𝘴 𝘸𝘦 𝘬𝘦𝘦𝘱 𝘰𝘯 𝘪𝘯𝘯𝘰𝘷𝘢𝘵𝘪𝘰𝘯 𝘢𝘯𝘥 𝘵𝘰 𝘣𝘳𝘪𝘯𝘨 𝘵𝘩𝘦 𝘣𝘦𝘴𝘵 𝘰𝘯𝘦 𝘤𝘢𝘯 𝘩𝘰𝘱𝘦 𝘧𝘰𝘳. 𝘛𝘩𝘢𝘵 𝘪𝘴 𝘸𝘩𝘺 𝘸𝘦 𝘥𝘦𝘤𝘪𝘥𝘦𝘥 𝘵𝘰 𝘱𝘢𝘳𝘵𝘯𝘦𝘳 𝘸𝘪𝘵𝘩 𝘪𝘯𝘵𝘦𝘳𝘯𝘢𝘵𝘪𝘰𝘯𝘢𝘭 𝘤𝘰𝘮𝘱𝘢𝘯𝘪𝘦𝘴: 𝘵𝘰 𝘦𝘲𝘶𝘪𝘱 𝘰𝘶𝘳 𝘤𝘭𝘪𝘦𝘯𝘵𝘴 𝘸𝘪𝘵𝘩 𝘵𝘩𝘦 𝘣𝘦𝘴𝘵 𝘴𝘰𝘭𝘶𝘵𝘪𝘰𝘯𝘴 𝘢𝘷𝘢𝘪𝘭𝘢𝘣𝘭𝘦. 𝘛𝘩𝘪𝘴 𝘪𝘴 𝘢𝘭𝘴𝘰 𝘸𝘩𝘺 𝘸𝘦 𝘢𝘳𝘦 𝘪𝘯𝘷𝘦𝘴𝘵𝘪𝘯𝘨 𝘴𝘪𝘨𝘯𝘪𝘧𝘪𝘤𝘢𝘯𝘵𝘭𝘺 𝘵𝘰 𝘥𝘦𝘷𝘦𝘭𝘰𝘱 𝘵𝘩𝘦 𝘵𝘢𝘭𝘦𝘯𝘵𝘴 𝘰𝘧 𝘰𝘶𝘳 𝘦𝘮𝘱𝘭𝘰𝘺𝘦𝘦𝘴 𝘤𝘰𝘯𝘵𝘪𝘯𝘶𝘰𝘶𝘴𝘭𝘺.</p>
-                  <p>𝘋𝘦𝘷𝘦𝘭𝘰𝘱𝘪𝘯𝘨 𝘢 𝘣𝘶𝘴𝘪𝘯𝘦𝘴𝘴 𝘳𝘦𝘴𝘱𝘰𝘯𝘴𝘪𝘣𝘭𝘺 𝘪𝘴 𝘤𝘩𝘢𝘭𝘭𝘦𝘯𝘨𝘪𝘯𝘨 𝘪𝘯 𝘢 𝘤𝘰𝘶𝘯𝘵𝘳𝘺 𝘭𝘪𝘬𝘦 𝘒𝘦𝘯𝘺𝘢. 𝘍𝘰𝘳𝘵𝘶𝘯𝘢𝘵𝘦𝘭𝘺, 𝘢𝘵 𝘉𝘐𝘎 𝘋𝘌𝘌 𝘚𝘦𝘤𝘶𝘳𝘪𝘵𝘺 𝘚𝘰𝘭𝘶𝘵𝘪𝘰𝘯𝘴 𝘓𝘪𝘮𝘪𝘵𝘦𝘥, 𝘸𝘦 𝘢𝘳𝘦 𝘢𝘭𝘭 𝘥𝘳𝘪𝘷𝘦𝘯 𝘣𝘺 𝘰𝘶𝘳 𝘷𝘪𝘴𝘪𝘰𝘯, 𝘰𝘶𝘳 𝘮𝘪𝘴𝘴𝘪𝘰𝘯 𝘢𝘯𝘥 𝘰𝘶𝘳 𝘷𝘢𝘭𝘶𝘦𝘴. 𝘓𝘪𝘬𝘦𝘸𝘪𝘴𝘦 𝘰𝘶𝘳 𝘤𝘰𝘮𝘮𝘪𝘵𝘮𝘦𝘯𝘵 𝘵𝘰 𝘶𝘱𝘩𝘰𝘭𝘥 𝘤𝘰𝘮𝘱𝘭𝘪𝘢𝘯𝘤𝘦 𝘢𝘯𝘥 𝘰𝘶𝘳 𝘻𝘦𝘳𝘰-𝘵𝘰𝘭𝘦𝘳𝘢𝘯𝘤𝘦 𝘢𝘱𝘱𝘳𝘰𝘢𝘤𝘩 𝘰𝘯 𝘤𝘰𝘳𝘳𝘶𝘱𝘵𝘪𝘰𝘯 𝘴𝘪𝘨𝘯𝘢𝘭 𝘩𝘰𝘸 𝘸𝘦 𝘸𝘢𝘯𝘵 𝘵𝘰 𝘰𝘱𝘦𝘳𝘢𝘵𝘦 𝘢𝘯𝘥 𝘤𝘰𝘯𝘥𝘶𝘤𝘵 𝘰𝘶𝘳 𝘣𝘶𝘴𝘪𝘯𝘦𝘴𝘴: 𝘦𝘵𝘩𝘪𝘤𝘢𝘭𝘭𝘺 𝘢𝘯𝘥 𝘳𝘦𝘴𝘱𝘰𝘯𝘴𝘪𝘣𝘭𝘺.</p>
-                  <p className="text-white/70 leading-relaxed">𝘉𝘐𝘎 𝘋𝘌𝘌 𝘚𝘦𝘤𝘶𝘳𝘪𝘵𝘺 𝘚𝘰𝘭𝘶𝘵𝘪𝘰𝘯𝘴 𝘓𝘪𝘮𝘪𝘵𝘦𝘥 𝘞𝘦 𝘢𝘪𝘮 𝘵𝘰 𝘱𝘳𝘰𝘷𝘪𝘥𝘦 𝘰𝘶𝘳 𝘦𝘮𝘱𝘭𝘰𝘺𝘦𝘦𝘴 𝘸𝘪𝘵𝘩 𝘢 𝘳𝘦𝘴𝘱𝘦𝘤𝘵𝘧𝘶𝘭 𝘸𝘰𝘳𝘬𝘱𝘭𝘢𝘤𝘦. 𝘉𝘦𝘪𝘯𝘨 𝘵𝘳𝘢𝘯𝘴𝘱𝘢𝘳𝘦𝘯𝘵 𝘢𝘯𝘥 𝘢𝘥𝘢𝘱𝘵𝘦𝘥 𝘵𝘰 𝘎𝘰𝘰𝘥 𝘊𝘰𝘳𝘱𝘰𝘳𝘢𝘵𝘦 𝘎𝘰𝘷𝘦𝘳𝘯𝘢𝘯𝘤𝘦 — 𝘸𝘪𝘵𝘩 𝘴𝘵𝘳𝘰𝘯𝘨 𝘤𝘰𝘮𝘮𝘪𝘵𝘮𝘦𝘯𝘵 𝘰𝘧 𝘉𝘖𝘋𝘴 𝘢𝘯𝘥 𝘵𝘦𝘢𝘮 𝘮𝘦𝘮𝘣𝘦𝘳𝘴, 𝘸𝘦 𝘢𝘳𝘦 𝘤𝘰𝘮𝘮𝘪𝘵𝘵𝘦𝘥 𝘵𝘰 𝘱𝘦𝘳𝘧𝘰𝘳𝘮 𝘣𝘦𝘵𝘵𝘦𝘳 𝘪𝘯 𝘵𝘩𝘦 𝘧𝘶𝘵𝘶𝘳𝘦. 𝘠𝘰𝘶 𝘤𝘢𝘯 𝘤𝘰𝘶𝘯𝘵 𝘰𝘯 𝘶𝘴.</p>
-                  <p></p>
+                  <p>At Cheston Security Services Limited, we believe good security starts with good people. Our officers are carefully selected, properly trained, and supervised closely so that every deployment meets the standard our clients expect.</p>
+                  <p>We work across residential, corporate, and industrial sites, tailoring each security plan to the specific risks and needs of the property. No two clients are the same, and we don't believe in one-size-fits-all solutions.</p>
+                  <p className="text-white/70 leading-relaxed">Integrity guides how we run this company — from how we treat our staff to how we deliver on our contracts. We're building Cheston to be a company our clients and our team can rely on for the long term.</p>
                 </div>
 
                 <div className="pt-4 border-t border-white/10">
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     {[
-                      "Zero-tolerance on corruption",
-                      "Ethical & responsible conduct",
-                      "International partnerships",
-                      "Continuous employee development",
-                      "Good Corporate Governance",
-                      "Respectful workplace culture",
+                      "Rigorous officer vetting",
+                      "Tailored security plans",
+                      "Close on-site supervision",
+                      "Ongoing staff training",
+                      "Transparent client communication",
+                      "Long-term client relationships",
                     ].map((c, i) => (
                       <div key={i} className="flex items-center gap-2 text-white/70 text-sm">
                         <CheckCircle className="w-4 h-4 text-red-400 shrink-0" />
@@ -107,7 +101,7 @@ export default function DirectorPage() {
               Guided by Vision, Mission & Values
             </h2>
             <p className="text-gray-500 mb-8">
-              At CHESTON security solutions limited, every decision — from hiring to service delivery — is guided by our founder's commitment to excellence and ethical conduct.
+              At Cheston Security Services Limited, every decision — from hiring to service delivery — is guided by our director's commitment to excellence and ethical conduct.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <button onClick={() => navigate("/about")}

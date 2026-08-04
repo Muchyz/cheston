@@ -1,23 +1,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 
-const photos = [
-  { src: "/gallery-team-portrait.jpg", caption: "CHESTON Security Team" },
-  { src: "/about-action.jpg", caption: "Security Screening" },
-  { src: "/about-gate.jpg", caption: "On Duty" },
-  { src: "/gallery-squad-new.jpg", caption: "CHESTON Security Team" },
-  { src: "/hero-officers.jpg", caption: "Security Officers" },
-  { src: "/armed-officer.jpg", caption: "Armed Officer" },
-  { src: "/director-duncan.jpg", caption: "Director Duncan O. Ngao" },
-  { src: "/gallery-vip-new.jpg", caption: "Suiting Up for Service" },
-  { src: "/supervision-truck.jpg", caption: "Patrol Vehicle" },
-  { src: "/mission-team.jpg", caption: "Mission Team" },
-  { src: "/contact-officer.jpg", caption: "Professional Service" },
-  { src: "/clients-officer.jpg", caption: "Client Protection" },
-  { src: "/gallery-briefing.jpg", caption: "Pre-Shift Briefing" },
-  { src: "/supervision-officer.jpg", caption: "Supervision & Management Officer" },
-  { src: "/guarding-dog.jpg", caption: "K9 Unit & Patrol" },
-];
+const photos = [];
 
 export default function GalleryPage() {
   const [selected, setSelected] = useState(null);
@@ -34,15 +18,19 @@ export default function GalleryPage() {
           <p className="text-gray-500 max-w-xl mx-auto">A look at our team, operations and commitment to security excellence across Kenya.</p>
         </div>
 
-        <div className="columns-2 md:columns-3 gap-4 space-y-4">
-          {photos.map((p, i) => (
-            <div key={i} className="break-inside-avoid rounded-2xl overflow-hidden shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
-              onClick={() => setSelected(p)}>
-              <img src={p.src} alt={p.caption} className="w-full h-auto object-cover"
-                onError={e => { e.target.parentElement.style.display = "none"; }} />
-            </div>
-          ))}
-        </div>
+        {photos.length === 0 ? (
+          <p className="text-center text-gray-500 py-12">Photo gallery coming soon.</p>
+        ) : (
+          <div className="columns-2 md:columns-3 gap-4 space-y-4">
+            {photos.map((p, i) => (
+              <div key={i} className="break-inside-avoid rounded-2xl overflow-hidden shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
+                onClick={() => setSelected(p)}>
+                <img src={p.src} alt={p.caption} className="w-full h-auto object-cover"
+                  onError={e => { e.target.parentElement.style.display = "none"; }} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {selected && (
