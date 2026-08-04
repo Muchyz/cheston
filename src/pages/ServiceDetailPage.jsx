@@ -151,7 +151,7 @@ export default function ServiceDetailPage() {
                     style={{ background: service.color }}>
                     Get Free Quote <ArrowRight className="w-4 h-4" />
                   </button>
-                  <a href="tel:+254725336860"
+                  <a href="tel:+254702396783"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/10 transition-all">
                     <Phone className="w-4 h-4" /> Call Now
                   </a>
@@ -174,24 +174,24 @@ export default function ServiceDetailPage() {
               <div className="p-6 rounded-3xl bg-white border border-gray-100 shadow-sm">
                 <h4 className="font-bold text-gray-900 mb-4">Quick Contact</h4>
                 <div className="space-y-3">
-                  <a href="tel:+254725336860"
+                  <a href="tel:+254702396783"
                     className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors">
                     <div className="w-9 h-9 rounded-xl bg-red-50 flex items-center justify-center shrink-0">
                       <Phone className="w-4 h-4 text-red-600" />
                     </div>
                     <div>
                       <div className="text-xs text-gray-400 font-medium">Emergency Line</div>
-                      <div className="text-sm font-bold text-gray-900">+254 725 336 860</div>
+                      <div className="text-sm font-bold text-gray-900">+254 702 396 783</div>
                     </div>
                   </a>
-                  <a href="tel:+254783672424"
+                  <a href="tel:+254703573531"
                     className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors">
                     <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
                       <Phone className="w-4 h-4 text-blue-700" />
                     </div>
                     <div>
                       <div className="text-xs text-gray-400 font-medium">Office Line</div>
-                      <div className="text-sm font-bold text-gray-900">+254 783 672 424</div>
+                      <div className="text-sm font-bold text-gray-900">+254 703 573 531</div>
                     </div>
                   </a>
                 </div>

@@ -150,9 +150,9 @@ export default function ContactPage() {
               <div className="rounded-3xl p-7 space-y-4" style={{ background: "linear-gradient(160deg,#0f172a,#1e1b4b)" }}>
                 <h3 className="text-white font-bold text-base tracking-wide">Get In Touch</h3>
                 {[
-                  { icon: Phone, color: "#dc2626", bg: "#fef2f2", label: "Call Us", lines: [{ text: "+254 725 336 860", href: "tel:+254725336860" }, { text: "+254 783 672 424", href: "tel:+254783672424" }] },
+                  { icon: Phone, color: "#dc2626", bg: "#fef2f2", label: "Call Us", lines: [{ text: "+254 702 396 783", href: "tel:+254702396783" }, { text: "+254 703 573 531", href: "tel:+254703573531" }] },
                   { icon: Mail, color: "#1e3a8a", bg: "#eff6ff", label: "Email Us", lines: [{ text: "chestonsecsolutions@gmail.com", href: "mailto:chestonsecsolutions@gmail.com" }, { text: "info@chestonsecurity.co.ke", href: "mailto:info@chestonsecurity.co.ke" }] },
-                  { icon: MapPin, color: "#15803d", bg: "#f0fdf4", label: "Our Office", lines: [{ text: "P.O. Box 1793-00100, Nairobi, Kenya", href: null }] },
+                  { icon: MapPin, color: "#15803d", bg: "#f0fdf4", label: "Our Office", lines: [{ text: "P.O. Box 82, Serem, Lavington Hope Center, Ambosel Road", href: null }] },
                   { icon: Globe, color: "#b45309", bg: "#fffbeb", label: "Website", lines: [{ text: "www.chestonsecurity.co.ke", href: "https://www.chestonsecurity.co.ke" }] },
                 ].map((c, i) => (
                   <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: "rgba(255,255,255,0.05)" }}>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                   <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
                   <span className="text-white/70 text-xs font-bold tracking-widest uppercase">Emergency Line</span>
                 </div>
-                <a href="tel:+254725336860" className="text-4xl font-black text-white hover:opacity-80 transition-opacity block">0725 336 860</a>
+                <a href="tel:+254702396783" className="text-4xl font-black text-white hover:opacity-80 transition-opacity block">0702 396 783</a>
                 <div className="text-white/60 text-xs mt-1">Available 24 hours, 7 days a week</div>
               </div>
 

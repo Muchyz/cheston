@@ -74,7 +74,7 @@ export default function PrivacyPage() {
             },
             {
               title: "7. Contact Us About Privacy",
-              content: "If you have any questions about this Privacy Policy or our handling of your personal information, please contact us at: info@chestonsecurity.co.ke or write to CHESTON security solutions limited, P.O. Box 1793-00100, Nairobi, Kenya."
+              content: "If you have any questions about this Privacy Policy or our handling of your personal information, please contact us at: info@chestonsecurity.co.ke or write to CHESTON security solutions limited, P.O. Box 82, Serem, Lavington Hope Center, Ambosel Road."
             },
             {
               title: "8. Changes to This Policy",

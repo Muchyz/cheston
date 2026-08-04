@@ -64,7 +64,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative">
               <div className="rounded-3xl overflow-hidden shadow-2xl" style={{ aspectRatio: "5/4" }}>
-                <img src="/director-duncan.jpg" alt="Duncan O. Ngao - Director"
+                <img src="/director-duncan.jpg" alt="John Kamau — K9 Unit Officer"
                   className="w-full h-full object-cover object-top"
                   onError={e => { e.target.style.background = "#e2e8f0"; }} />
               </div>

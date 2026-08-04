@@ -139,9 +139,9 @@ export default function CareersPage() {
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-white text-red-700 hover:-translate-y-0.5 transition-all shadow-md">
                     <Mail className="w-4 h-4" /> Email Your Application
                   </a>
-                  <a href="tel:+254725336860"
+                  <a href="tel:+254702396783"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white border border-white/30 hover:bg-white/10 transition-all">
-                    <Phone className="w-4 h-4" /> Call HR: 0725 336 860
+                    <Phone className="w-4 h-4" /> Call HR: 0702 396 783
                   </a>
                 </div>
               </div>
