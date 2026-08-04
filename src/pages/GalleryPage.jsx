@@ -1,7 +1,18 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 
-const photos = [];
+const photos = [
+  { src: "/gallery-officers-back.jpg", caption: "CHESTON Officers on Duty" },
+  { src: "/gallery-lobby-officers.jpg", caption: "Lobby Security Detail" },
+  { src: "/gallery-guards-estate.jpg", caption: "Estate Patrol Officers" },
+  { src: "/about-main.jpg", caption: "CHESTON Security Team" },
+  { src: "/about-action.jpg", caption: "Security in Action" },
+  { src: "/about-gate.jpg", caption: "Gate Security" },
+  { src: "/gallery-vip-new.jpg", caption: "Suiting Up for Service" },
+  { src: "/gallery-briefing.jpg", caption: "Pre-Shift Briefing" },
+  { src: "/gallery-officers-salute.jpg", caption: "Officers Standing Guard" },
+  { src: "/gallery-vest-team.jpg", caption: "Team Assembly" },
+];
 
 export default function GalleryPage() {
   const [selected, setSelected] = useState(null);
