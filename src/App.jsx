@@ -920,10 +920,8 @@ function WhyUs() {
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl" style={{ aspectRatio: "4/3" }}>
-              <img src="/officers-squad.jpg"
-                alt="CHESTON Security team" className="w-full h-full object-cover"
-                onError={e => { e.target.style.background="#1e293b"; }} />
             </div>
+              <img src="/officers-squad.jpg" alt="CHESTON Security team" className="w-full h-full object-cover" onError={e => { e.target.style.background="#1e293b"; }} />
           </div>
         </Reveal>
       </div>
