@@ -1258,7 +1258,7 @@ function Contact() {
               <div className="rounded-3xl overflow-hidden shadow-xl" style={{ height: "180px" }}>
                 <iframe
                   title="Cheston Security Location"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=34.7580%2C-1.2950%2C34.7880%2C-1.2650&layer=mapnik&marker=-1.2800%2C34.7730"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=36.7492%2C-1.2896%2C36.7692%2C-1.2796&layer=mapnik&marker=-1.28456%2C36.75923"
                   width="100%"
                   height="180"
                   style={{ border: 0 }}
