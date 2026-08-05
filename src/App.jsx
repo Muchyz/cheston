@@ -1255,18 +1255,18 @@ function Contact() {
               </div>
             </Reveal>
             <Reveal delay={0.15} className="lg:col-span-2 space-y-4">
-              <div className="rounded-3xl overflow-hidden shadow-xl" style={{ height: "180px" }}>
-                <iframe
-                  title="Cheston Security Location"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=36.7492%2C-1.2896%2C36.7692%2C-1.2796&layer=mapnik&marker=-1.28456%2C36.75923"
-                  width="100%"
-                  height="180"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade">
-                </iframe>
-                
+              <div className="rounded-3xl overflow-hidden shadow-xl flex flex-col items-center justify-center text-center p-6" style={{ height: "180px", background: "linear-gradient(135deg,#1e293b,#0f172a)" }}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2" className="w-9 h-9 mb-2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <p className="text-white font-bold text-sm leading-tight">Serem, Lavington Hope Center</p>
+                <p className="text-white/60 text-xs mb-3">Amboseli Road, Nairobi</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=-1.28456,36.75923" target="_blank" rel="noopener noreferrer"
+                  className="text-xs font-bold px-4 py-2 rounded-full text-white transition-all hover:-translate-y-0.5"
+                  style={{ background: "linear-gradient(135deg,#dc2626,#1e3a8a)" }}>
+                  Get Directions
+                </a>
               </div>
               <div className="rounded-3xl p-6 space-y-3" style={{ background: "linear-gradient(160deg,#0f172a,#1e1b4b)" }}>
                 <h4 className="text-white font-bold text-sm tracking-wide mb-3">Get In Touch</h4>
