@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import { ArrowRight, CheckCircle, User } from "lucide-react";
+import directorPhoto from "../assets/director.jpg";
 
 function useReveal(threshold = 0.12) {
   const ref = useRef(null);
@@ -36,8 +37,8 @@ export default function DirectorPage() {
             <Reveal>
               <div className="space-y-4">
                 <div className="rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center"
-                  style={{ aspectRatio: "3/4", background: "#1e293b" }}>
-                  <User className="w-20 h-20 text-white/20" />
+                  style={{ aspectRatio: "4/3", background: "#1e293b" }}>
+                  <img src={directorPhoto} alt="Director" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-5 rounded-2xl text-center" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
                   <div className="text-white font-bold text-lg">Benjamin Rotich</div>

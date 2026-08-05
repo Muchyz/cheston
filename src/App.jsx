@@ -1,3 +1,4 @@
+import directorPhoto from "./assets/director.jpg";
 import { useState, useEffect, useRef } from "react";
 import { Routes, Route, useNavigate, Link, useLocation } from "react-router-dom";
 import {
@@ -445,8 +446,8 @@ function Director() {
         <Reveal delay={0.1}>
           <div className="grid lg:grid-cols-3 gap-8 items-start">
             <div className="rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center"
-              style={{ aspectRatio: "3/4", background: "#1e293b" }}>
-              <User className="w-20 h-20 text-white/20" />
+              style={{ aspectRatio: "4/3", background: "#1e293b" }}>
+              <img src={directorPhoto} alt="Director" className="w-full h-full object-cover" />
             </div>
             <div className="lg:col-span-2 space-y-6">
               <div className="text-red-400 opacity-60">
