@@ -1,4 +1,5 @@
 import directorPhoto from "./assets/director.jpg";
+import personnelPhoto from "./assets/personnel-strength.png";
 import { useState, useEffect, useRef } from "react";
 import { Routes, Route, useNavigate, Link, useLocation } from "react-router-dom";
 import {
@@ -921,6 +922,7 @@ function WhyUs() {
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl" style={{ aspectRatio: "4/3" }}>
+              <img src={personnelPhoto} alt="Cheston Security personnel on duty" className="w-full h-full object-cover" />
             </div>
               
           </div>
@@ -1254,6 +1256,16 @@ function Contact() {
             </Reveal>
             <Reveal delay={0.15} className="lg:col-span-2 space-y-4">
               <div className="rounded-3xl overflow-hidden shadow-xl" style={{ height: "180px" }}>
+                <iframe
+                  title="Cheston Security Location"
+                  src="https://www.google.com/maps?q=Serem,+Lavington+Hope+Center,+Ambosel+Road&output=embed"
+                  width="100%"
+                  height="180"
+                  style={{ border: "3px solid red" }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade">
+                </iframe>
                 
               </div>
               <div className="rounded-3xl p-6 space-y-3" style={{ background: "linear-gradient(160deg,#0f172a,#1e1b4b)" }}>
