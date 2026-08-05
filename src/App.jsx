@@ -229,8 +229,9 @@ function Navbar() {
       >
         <div className="relative flex items-center justify-center px-6 py-6 border-b border-gray-100" style={{ minHeight: "88px" }}>
           <img src="/logo.png" alt="CHESTON Security" style={{ height: "72px", objectFit: "contain" }} />
-          <button onClick={() => setOpen(false)} aria-label="Close menu" className="absolute top-1/2 right-4 -translate-y-1/2 p-2 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors">
-            <X className="w-6 h-6" />
+          <button onClick={() => setOpen(false)} aria-label="Close menu"
+            className="absolute top-1/2 right-4 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600 transition-colors shadow-sm">
+            <X className="w-5 h-5" strokeWidth={2.5} />
           </button>
         </div>
         <div className="flex-1 overflow-y-auto px-4 py-5 flex flex-col">
