@@ -9,8 +9,9 @@ import {
   Building, Home, ShoppingBag, Factory, Mic,
   CheckCircle, TrendingUp, Eye, Cpu, BarChart3,
   Play, ChevronDown, Send, Quote,
-  Activity, Layers, Radio, Star, Target, BadgeCheck, FileCheck, BookOpen
-, User } from "lucide-react";
+  Activity, Layers, Radio, Star, Target, BadgeCheck, FileCheck, BookOpen,
+  Info, Wrench, Image, HelpCircle, Briefcase, User
+} from "lucide-react";
 
 // ── page imports ──
 import AboutPage from "./pages/AboutPage";
@@ -104,8 +105,11 @@ const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior:
 /* ── NAVBAR ── */
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const moreRef = useRef(null);
 
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 50);
@@ -113,15 +117,33 @@ function Navbar() {
     return () => window.removeEventListener("scroll", h);
   }, []);
 
-  // Links: label → anchor id (for home page scroll) OR route path
+  useEffect(() => {
+    function handleClick(e) {
+      if (moreRef.current && !moreRef.current.contains(e.target)) setMoreOpen(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
   const links = [
-    { label: "Home", action: () => { navigate("/"); setTimeout(() => scrollTo("hero"), 100); } },
-    { label: "About", action: () => { navigate("/about"); } },
-    { label: "Services", action: () => { navigate("/services"); } },
-    { label: "Why Us", action: () => { navigate("/"); setTimeout(() => scrollTo("why-us"), 100); } },
-    { label: "Clients", action: () => { navigate("/clients"); } },
-    { label: "Contact", action: () => { navigate("/contact"); } },
+    { label: "Home", icon: Home, path: "/", action: () => { navigate("/"); setTimeout(() => scrollTo("hero"), 100); } },
+    { label: "About", icon: Info, path: "/about", action: () => navigate("/about") },
+    { label: "Services", icon: Wrench, path: "/services", action: () => navigate("/services") },
+    { label: "Why Us", icon: Eye, path: "/", action: () => { navigate("/"); setTimeout(() => scrollTo("why-us"), 100); } },
+    { label: "Clients", icon: Users, path: "/clients", action: () => navigate("/clients") },
+    { label: "Contact", icon: Mail, path: "/contact", action: () => navigate("/contact") },
   ];
+
+  const moreLinks = [
+    { label: "Gallery", icon: Image, path: "/gallery", action: () => navigate("/gallery") },
+    { label: "Team", icon: UserCheck, path: "/team", action: () => navigate("/team") },
+    { label: "Vision & Mission", icon: Target, path: "/vision-mission", action: () => navigate("/vision-mission") },
+    { label: "FAQ", icon: HelpCircle, path: "/faq", action: () => navigate("/faq") },
+    { label: "Careers", icon: Briefcase, path: "/careers", action: () => navigate("/careers") },
+    { label: "Privacy", icon: Lock, path: "/privacy", action: () => navigate("/privacy") },
+  ];
+
+  const isActive = (path) => path !== "/" ? location.pathname === path : location.pathname === "/" && !location.hash;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -135,33 +157,98 @@ function Navbar() {
         <button onClick={() => { navigate("/"); setTimeout(() => scrollTo("hero"), 100); }}>
           <img src="/logo.png" alt="CHESTON Security" style={{ height: "88px", objectFit: "contain" }} />
         </button>
-        <div className="hidden lg:flex items-center gap-8">
-          {links.map((l) => (
-            <button key={l.label} onClick={() => { l.action(); setOpen(false); }}
-              className="text-sm font-medium text-gray-600 hover:text-red-600 transition-colors">{l.label}</button>
-          ))}
+        <div className="hidden lg:flex items-center gap-6">
+          {links.map((l) => {
+            const Icon = l.icon;
+            const active = isActive(l.path);
+            return (
+              <button key={l.label} onClick={() => { l.action(); setOpen(false); }}
+                className={"flex items-center gap-1.5 text-sm font-medium transition-colors " + (active ? "text-red-600" : "text-gray-600 hover:text-red-600")}>
+                <Icon className="w-4 h-4" />{l.label}
+              </button>
+            );
+          })}
+          <div className="relative" ref={moreRef}>
+            <button onClick={() => setMoreOpen((v) => !v)}
+              className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-red-600 transition-colors">
+              More <ChevronDown className={"w-3.5 h-3.5 transition-transform " + (moreOpen ? "rotate-180" : "")} />
+            </button>
+            {moreOpen && (
+              <div className="absolute top-full right-0 mt-2 w-52 bg-white rounded-xl shadow-lg border border-gray-100 py-1 z-50">
+                {moreLinks.map((l) => {
+                  const Icon = l.icon;
+                  const active = isActive(l.path);
+                  return (
+                    <button key={l.label} onClick={() => { l.action(); setMoreOpen(false); }}
+                      className={"flex items-center gap-3 w-full text-left px-4 py-2.5 text-sm font-medium transition-colors " + (active ? "text-red-600 bg-red-50" : "text-gray-600 hover:bg-red-50 hover:text-red-600")}>
+                      <Icon className="w-4 h-4" />{l.label}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
           <button onClick={() => navigate("/contact")}
             className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
             style={{ background: "linear-gradient(135deg,#dc2626,#1e3a8a)" }}>
             Get a Quote
           </button>
         </div>
-        <button className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" onClick={() => setOpen(!open)}>
+        <button className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" onClick={() => setOpen((v) => !v)}>
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
       {open && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-1">
-          {links.map((l) => (
-            <button key={l.label} onClick={() => { l.action(); setOpen(false); }}
-              className="block w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-gray-700 hover:bg-red-50 hover:text-red-700 transition-colors">{l.label}</button>
-          ))}
-          <button onClick={() => { navigate("/contact"); setOpen(false); }}
-            className="w-full mt-2 px-4 py-3 rounded-xl text-sm font-semibold text-white"
-            style={{ background: "linear-gradient(135deg,#dc2626,#1e3a8a)" }}>
-            Get a Free Quote
-          </button>
-        </div>
+        <>
+          <div className="lg:hidden fixed inset-0 bg-black/50 z-40" onClick={() => setOpen(false)} />
+          <div className="lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-50 shadow-2xl flex flex-col">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+              <img src="/logo.png" alt="CHESTON Security" style={{ height: "56px", objectFit: "contain" }} />
+              <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2 -mr-2 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors">
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto px-4 py-5 flex flex-col">
+              <div className="flex flex-col gap-1">
+                {links.map((l) => {
+                  const Icon = l.icon;
+                  const active = isActive(l.path);
+                  return (
+                    <button key={l.label} onClick={() => { l.action(); setOpen(false); }}
+                      className={"flex items-center gap-4 px-4 py-3.5 rounded-xl font-semibold text-base transition-colors text-left " + (active ? "bg-red-50 text-red-600" : "text-gray-700 hover:bg-gray-50")}>
+                      <Icon className="w-5 h-5 flex-shrink-0" />{l.label}
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="mt-5 pt-5 border-t border-gray-100">
+                <p className="px-4 pb-2 text-gray-400 font-bold uppercase tracking-wider" style={{ fontSize: "11px" }}>More</p>
+                <div className="flex flex-col gap-1">
+                  {moreLinks.map((l) => {
+                    const Icon = l.icon;
+                    const active = isActive(l.path);
+                    return (
+                      <button key={l.label} onClick={() => { l.action(); setOpen(false); }}
+                        className={"flex items-center gap-4 px-4 py-3.5 rounded-xl font-semibold text-base transition-colors text-left " + (active ? "bg-red-50 text-red-600" : "text-gray-700 hover:bg-gray-50")}>
+                        <Icon className="w-5 h-5 flex-shrink-0" />{l.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            <div className="px-5 py-5 border-t border-gray-100 flex flex-col gap-3 bg-gray-50">
+              <a href="tel:+254702396783" className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 font-bold rounded-xl py-3.5 text-sm shadow-sm" onClick={() => setOpen(false)}>
+                <Phone className="w-4 h-4" /> Call Now
+              </a>
+              <button onClick={() => { navigate("/contact"); setOpen(false); }}
+                className="flex items-center justify-center gap-2 text-white font-bold rounded-xl py-3.5 text-sm shadow-md"
+                style={{ background: "linear-gradient(135deg,#dc2626,#1e3a8a)" }}>
+                Get a Free Quote <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </>
       )}
     </nav>
   );

@@ -141,8 +141,8 @@ export default function ContactPage() {
 
             {/* Info Sidebar */}
             <Reveal delay={0.15} className="lg:col-span-2 space-y-5">
-              <div className="rounded-3xl overflow-hidden shadow-xl flex flex-col items-center justify-center text-center p-6" style={{ height: "200px", background: "linear-gradient(135deg,#1e293b,#0f172a)" }}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2" className="w-9 h-9 mb-2">
+              <div className="rounded-3xl overflow-hidden shadow-xl flex flex-col items-center justify-center text-center p-6" style={{ height: "200px", background: "linear-gradient(135deg,#1a1a1a,#000000)" }}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f7941d" strokeWidth="2" className="w-9 h-9 mb-2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
@@ -150,7 +150,7 @@ export default function ContactPage() {
                 <p className="text-white/60 text-xs mb-3">Amboseli Road, Nairobi</p>
                 <a href="https://www.google.com/maps/dir/?api=1&destination=-1.28456,36.75923" target="_blank" rel="noopener noreferrer"
                   className="text-xs font-bold px-4 py-2 rounded-full text-white transition-all hover:-translate-y-0.5"
-                  style={{ background: "linear-gradient(135deg,#dc2626,#1e3a8a)" }}>
+                  style={{ background: "linear-gradient(135deg,#f7941d,#000000)" }}>
                   Get Directions
                 </a>
               </div>
