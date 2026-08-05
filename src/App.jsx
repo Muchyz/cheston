@@ -125,6 +125,22 @@ function Navbar() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  useEffect(() => {
+    if (open) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => { document.body.style.overflow = prev; };
+    }
+  }, [open]);
+
+  useEffect(() => {
+    function handleKey(e) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, []);
+
   const links = [
     { label: "Home", icon: Home, path: "/", action: () => { navigate("/"); setTimeout(() => scrollTo("hero"), 100); } },
     { label: "About", icon: Info, path: "/about", action: () => navigate("/about") },
@@ -144,6 +160,7 @@ function Navbar() {
   ];
 
   const isActive = (path) => path !== "/" ? location.pathname === path : location.pathname === "/" && !location.hash;
+  const moreActive = moreLinks.some((l) => isActive(l.path));
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -153,40 +170,42 @@ function Navbar() {
         borderBottom: scrolled ? "1px solid rgba(226,232,240,0.8)" : "none",
         boxShadow: scrolled ? "0 1px 24px rgba(0,0,0,0.06)" : "none",
       }}>
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300" style={{ paddingTop: scrolled ? "10px" : "16px", paddingBottom: scrolled ? "10px" : "16px" }}>
         <button onClick={() => { navigate("/"); setTimeout(() => scrollTo("hero"), 100); }}>
-          <img src="/logo.png" alt="CHESTON Security" style={{ height: "88px", objectFit: "contain" }} />
+          <img src="/logo.png" alt="CHESTON Security" className="transition-all duration-300" style={{ height: scrolled ? "64px" : "88px", objectFit: "contain" }} />
         </button>
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-7">
           {links.map((l) => {
             const Icon = l.icon;
             const active = isActive(l.path);
             return (
               <button key={l.label} onClick={() => { l.action(); setOpen(false); }}
-                className={"flex items-center gap-1.5 text-sm font-medium transition-colors " + (active ? "text-red-600" : "text-gray-600 hover:text-red-600")}>
+                className={"relative flex items-center gap-1.5 text-sm font-medium py-1.5 transition-colors " + (active ? "text-red-600" : "text-gray-600 hover:text-red-600")}>
                 <Icon className="w-4 h-4" />{l.label}
+                <span className={"absolute -bottom-0.5 left-0 right-0 h-0.5 rounded-full transition-all duration-300 " + (active ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0")}
+                  style={{ background: "linear-gradient(90deg,#dc2626,#1e3a8a)" }} />
               </button>
             );
           })}
           <div className="relative" ref={moreRef}>
             <button onClick={() => setMoreOpen((v) => !v)}
-              className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-red-600 transition-colors">
-              More <ChevronDown className={"w-3.5 h-3.5 transition-transform " + (moreOpen ? "rotate-180" : "")} />
+              className={"relative flex items-center gap-1 text-sm font-medium py-1.5 transition-colors " + (moreActive ? "text-red-600" : "text-gray-600 hover:text-red-600")}>
+              More <ChevronDown className={"w-3.5 h-3.5 transition-transform duration-200 " + (moreOpen ? "rotate-180" : "")} />
+              <span className={"absolute -bottom-0.5 left-0 right-0 h-0.5 rounded-full transition-all duration-300 " + (moreActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0")}
+                style={{ background: "linear-gradient(90deg,#dc2626,#1e3a8a)" }} />
             </button>
-            {moreOpen && (
-              <div className="absolute top-full right-0 mt-2 w-52 bg-white rounded-xl shadow-lg border border-gray-100 py-1 z-50">
-                {moreLinks.map((l) => {
-                  const Icon = l.icon;
-                  const active = isActive(l.path);
-                  return (
-                    <button key={l.label} onClick={() => { l.action(); setMoreOpen(false); }}
-                      className={"flex items-center gap-3 w-full text-left px-4 py-2.5 text-sm font-medium transition-colors " + (active ? "text-red-600 bg-red-50" : "text-gray-600 hover:bg-red-50 hover:text-red-600")}>
-                      <Icon className="w-4 h-4" />{l.label}
-                    </button>
-                  );
-                })}
-              </div>
-            )}
+            <div className={"absolute top-full right-0 mt-2 w-52 bg-white rounded-xl shadow-lg border border-gray-100 py-1 z-50 transition-all duration-200 origin-top-right " + (moreOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none")}>
+              {moreLinks.map((l) => {
+                const Icon = l.icon;
+                const active = isActive(l.path);
+                return (
+                  <button key={l.label} onClick={() => { l.action(); setMoreOpen(false); }}
+                    className={"flex items-center gap-3 w-full text-left px-4 py-2.5 text-sm font-medium transition-colors " + (active ? "text-red-600 bg-red-50" : "text-gray-600 hover:bg-red-50 hover:text-red-600")}>
+                    <Icon className="w-4 h-4" />{l.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
           <button onClick={() => navigate("/contact")}
             className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
@@ -198,58 +217,61 @@ function Navbar() {
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
-      {open && (
-        <>
-          <div className="lg:hidden fixed inset-0 bg-black/50 z-40" onClick={() => setOpen(false)} />
-          <div className="lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-50 shadow-2xl flex flex-col">
-            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
-              <img src="/logo.png" alt="CHESTON Security" style={{ height: "56px", objectFit: "contain" }} />
-              <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2 -mr-2 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors">
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <div className="flex-1 overflow-y-auto px-4 py-5 flex flex-col">
-              <div className="flex flex-col gap-1">
-                {links.map((l) => {
-                  const Icon = l.icon;
-                  const active = isActive(l.path);
-                  return (
-                    <button key={l.label} onClick={() => { l.action(); setOpen(false); }}
-                      className={"flex items-center gap-4 px-4 py-3.5 rounded-xl font-semibold text-base transition-colors text-left " + (active ? "bg-red-50 text-red-600" : "text-gray-700 hover:bg-gray-50")}>
-                      <Icon className="w-5 h-5 flex-shrink-0" />{l.label}
-                    </button>
-                  );
-                })}
-              </div>
-              <div className="mt-5 pt-5 border-t border-gray-100">
-                <p className="px-4 pb-2 text-gray-400 font-bold uppercase tracking-wider" style={{ fontSize: "11px" }}>More</p>
-                <div className="flex flex-col gap-1">
-                  {moreLinks.map((l) => {
-                    const Icon = l.icon;
-                    const active = isActive(l.path);
-                    return (
-                      <button key={l.label} onClick={() => { l.action(); setOpen(false); }}
-                        className={"flex items-center gap-4 px-4 py-3.5 rounded-xl font-semibold text-base transition-colors text-left " + (active ? "bg-red-50 text-red-600" : "text-gray-700 hover:bg-gray-50")}>
-                        <Icon className="w-5 h-5 flex-shrink-0" />{l.label}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-            <div className="px-5 py-5 border-t border-gray-100 flex flex-col gap-3 bg-gray-50">
-              <a href="tel:+254702396783" className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 font-bold rounded-xl py-3.5 text-sm shadow-sm" onClick={() => setOpen(false)}>
-                <Phone className="w-4 h-4" /> Call Now
-              </a>
-              <button onClick={() => { navigate("/contact"); setOpen(false); }}
-                className="flex items-center justify-center gap-2 text-white font-bold rounded-xl py-3.5 text-sm shadow-md"
-                style={{ background: "linear-gradient(135deg,#dc2626,#1e3a8a)" }}>
-                Get a Free Quote <ArrowRight className="w-4 h-4" />
-              </button>
+
+      <div
+        className={"lg:hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 " + (open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none")}
+        onClick={() => setOpen(false)}
+      />
+
+      <div
+        className={"lg:hidden fixed top-0 right-0 h-full w-[72%] max-w-[300px] bg-white z-50 shadow-2xl flex flex-col transition-transform duration-300 ease-out " + (open ? "translate-x-0" : "translate-x-full")}
+      >
+        <div className="relative flex items-center justify-center px-6 py-6 border-b border-gray-100" style={{ minHeight: "88px" }}>
+          <img src="/logo.png" alt="CHESTON Security" style={{ height: "72px", objectFit: "contain" }} />
+          <button onClick={() => setOpen(false)} aria-label="Close menu" className="absolute top-1/2 right-4 -translate-y-1/2 p-2 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors">
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+        <div className="flex-1 overflow-y-auto px-4 py-5 flex flex-col">
+          <div className="flex flex-col gap-1">
+            {links.map((l) => {
+              const Icon = l.icon;
+              const active = isActive(l.path);
+              return (
+                <button key={l.label} onClick={() => { l.action(); setOpen(false); }}
+                  className={"flex items-center gap-4 px-4 py-3.5 rounded-xl font-semibold text-base transition-colors text-left " + (active ? "bg-red-50 text-red-600" : "text-gray-700 hover:bg-gray-50")}>
+                  <Icon className="w-5 h-5 flex-shrink-0" />{l.label}
+                </button>
+              );
+            })}
+          </div>
+          <div className="mt-5 pt-5 border-t border-gray-100">
+            <p className="px-4 pb-2 text-gray-400 font-bold uppercase tracking-wider" style={{ fontSize: "11px" }}>More</p>
+            <div className="flex flex-col gap-1">
+              {moreLinks.map((l) => {
+                const Icon = l.icon;
+                const active = isActive(l.path);
+                return (
+                  <button key={l.label} onClick={() => { l.action(); setOpen(false); }}
+                    className={"flex items-center gap-4 px-4 py-3.5 rounded-xl font-semibold text-base transition-colors text-left " + (active ? "bg-red-50 text-red-600" : "text-gray-700 hover:bg-gray-50")}>
+                    <Icon className="w-5 h-5 flex-shrink-0" />{l.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
-        </>
-      )}
+        </div>
+        <div className="px-5 py-5 border-t border-gray-100 flex flex-col gap-3 bg-gray-50">
+          <a href="tel:+254702396783" className="flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 font-bold rounded-xl py-3.5 text-sm shadow-sm" onClick={() => setOpen(false)}>
+            <Phone className="w-4 h-4" /> Call Now
+          </a>
+          <button onClick={() => { navigate("/contact"); setOpen(false); }}
+            className="flex items-center justify-center gap-2 text-white font-bold rounded-xl py-3.5 text-sm shadow-md"
+            style={{ background: "linear-gradient(135deg,#dc2626,#1e3a8a)" }}>
+            Get a Free Quote <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
     </nav>
   );
 }
