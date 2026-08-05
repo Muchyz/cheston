@@ -1088,7 +1088,7 @@ function Clients() {
                 onMouseLeave={e => e.currentTarget.style.borderColor = "#f1f5f9"}>
                 <div className="relative overflow-hidden" style={{aspectRatio:"16/9"}}>
                   <img src={`/${item.photo}`} alt={item.title}
-                    className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     style={{background:"#f1f5f9"}}
                     onError={e => { e.target.parentElement.style.background = item.bg; e.target.style.display="none"; }} />
                   <div className="absolute inset-0" style={{background:"linear-gradient(to top,rgba(0,0,0,0.55),transparent)"}} />
@@ -1297,7 +1297,7 @@ function Contact() {
               <div className="rounded-3xl p-5 bg-white border border-gray-100 shadow-sm">
                 <div className="text-xs font-bold text-gray-400 tracking-widest uppercase mb-3">Follow Us</div>
                 <div className="flex items-center gap-3">
-                  <a href="https://www.facebook.com/profile.php?id=100091385217439" target="_blank" rel="noopener noreferrer"
+                  <a href="https://www.facebook.com/profile.php?id=61560920315686" target="_blank" rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
                     style={{ background: "#1877f2" }} title="Facebook">
                     <svg viewBox="0 0 24 24" fill="white" width="18" height="18">
@@ -1399,7 +1399,7 @@ function Footer() {
         </div>
         {/* Social Media Icons */}
         <div className="flex items-center justify-center gap-4 mb-8">
-          <a href="https://www.facebook.com/profile.php?id=100091385217439" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.facebook.com/profile.php?id=61560920315686" target="_blank" rel="noopener noreferrer"
             className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 hover:opacity-90"
             style={{ background: "#1877f2" }} title="Facebook">
             <svg viewBox="0 0 24 24" fill="white" width="18" height="18">
