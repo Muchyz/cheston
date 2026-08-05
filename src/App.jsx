@@ -292,21 +292,21 @@ function Hero() {
 
       {/* Main Content */}
       <div className="relative flex-1 flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-5 pt-24 pb-6 grid lg:grid-cols-2 gap-10 items-center">
+        <div className="w-full max-w-7xl mx-auto px-5 pt-32 sm:pt-28 lg:pt-24 pb-6 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             {/* Badge */}
             <div className="animate-fadeUp inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold mb-5 border border-red-200"
               style={{ background: "linear-gradient(135deg,#fef2f2,#fff1f2)", color: "#dc2626" }}>
               <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              Your Security is Our Priority!
+              Approved to protect!
             </div>
 
             {/* Heading */}
             <h1 className="animate-fadeUp delay-100 text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-gray-900 mb-4">
-              Kenya's Premier<br />
+              Kenya's Leading<br />
               <span style={{ background: "linear-gradient(135deg,#dc2626,#1e3a8a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                Security
-              </span><br />Solutions
+                Protection
+              </span><br />Experts
             </h1>
 
             {/* Accent line */}
@@ -317,7 +317,7 @@ function Hero() {
 
             {/* Subtext */}
             <p className="animate-fadeUp delay-200 text-sm sm:text-base text-gray-500 leading-relaxed mb-5 max-w-lg">
-              CHESTON Security is dedicated to the provision of excellent security services. We offer a complete range of planning, system analysis, design and executive protection services across Kenya.
+              CHESTON Security is committed to delivering excellent security solutions. We provide a complete range of consulting, risk assessment, design and executive protection services across Kenya.
             </p>
 
             {/* Buttons */}
@@ -1478,9 +1478,11 @@ function Footer() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <div className="flex items-center justify-center mb-1">
-              <img src="/logo.png" alt="CHESTON Security" style={{ height: "72px", objectFit: "contain" }} />
+              <div className="bg-white rounded-2xl px-5 py-3 shadow-lg">
+                <img src="/logo.png" alt="CHESTON Security" style={{ height: "72px", objectFit: "contain" }} />
+              </div>
             </div>
-            <div className="text-white/40 text-xs tracking-widest uppercase">Your Security is Our Priority</div>
+            <div className="text-white/40 text-xs tracking-widest uppercase">Approved to protect</div>
           </div>
         </div>
       </div>
@@ -1542,7 +1544,7 @@ function Footer() {
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-gray-500 text-xs">All systems operational</span>
           </div>
-          <p className="text-gray-600 text-sm">Your Security is Our Priority</p>
+          <p className="text-gray-600 text-sm">Approved to protect</p>
         </div>
       </div>
     </footer>
