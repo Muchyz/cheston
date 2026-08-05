@@ -163,14 +163,15 @@ function Navbar() {
   const moreActive = moreLinks.some((l) => isActive(l.path));
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={{
-        background: scrolled ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0)",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(226,232,240,0.8)" : "none",
-        boxShadow: scrolled ? "0 1px 24px rgba(0,0,0,0.06)" : "none",
-      }}>
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300" style={{ paddingTop: scrolled ? "10px" : "16px", paddingBottom: scrolled ? "10px" : "16px" }}>
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      <div className="absolute inset-0 transition-all duration-300 pointer-events-none"
+        style={{
+          background: scrolled ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0)",
+          backdropFilter: scrolled ? "blur(20px)" : "none",
+          borderBottom: scrolled ? "1px solid rgba(226,232,240,0.8)" : "none",
+          boxShadow: scrolled ? "0 1px 24px rgba(0,0,0,0.06)" : "none",
+        }} />
+      <div className="relative max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300" style={{ paddingTop: scrolled ? "10px" : "16px", paddingBottom: scrolled ? "10px" : "16px" }}>
         <button onClick={() => { navigate("/"); setTimeout(() => scrollTo("hero"), 100); }}>
           <img src="/logo.png" alt="CHESTON Security" className="transition-all duration-300" style={{ height: scrolled ? "64px" : "88px", objectFit: "contain" }} />
         </button>
@@ -224,7 +225,7 @@ function Navbar() {
       />
 
       <div
-        className={"lg:hidden fixed top-0 right-0 h-full w-[72%] max-w-[300px] bg-white z-50 shadow-2xl flex flex-col transition-transform duration-300 ease-out " + (open ? "translate-x-0" : "translate-x-full")}
+        className={"lg:hidden fixed inset-y-0 right-0 w-[72%] max-w-[300px] bg-white z-50 shadow-2xl flex flex-col transition-transform duration-300 ease-out " + (open ? "translate-x-0" : "translate-x-full")}
       >
         <div className="relative flex items-center justify-center px-6 py-6 border-b border-gray-100" style={{ minHeight: "88px" }}>
           <img src="/logo.png" alt="CHESTON Security" style={{ height: "72px", objectFit: "contain" }} />
