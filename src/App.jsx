@@ -1381,7 +1381,7 @@ function Contact() {
                 <h4 className="text-white font-bold text-sm tracking-wide mb-3">Get In Touch</h4>
                 {[
                   { icon: Phone, color: "#dc2626", bg: "#fef2f2", label: "Call Us", lines: [{text: "+254 702 396 783", href: "tel:+254702396783"}, {text: "+254 703 573 531", href: "tel:+254703573531"}] },
-                  { icon: Mail, color: "#1e3a8a", bg: "#eff6ff", label: "Email Us", lines: [{text: "chestonsecsolutions@gmail.com", href: "mailto:chestonsecsolutions@gmail.com"}, {text: "info@chestonsecurity.co.ke", href: "mailto:info@chestonsecurity.co.ke"}] },
+                  { icon: Mail, color: "#1e3a8a", bg: "#eff6ff", label: "Email Us", lines: [{text: "Chestonguardservices@gmail.com", href: "mailto:Chestonguardservices@gmail.com"}, {text: "Chestonguardservices@gmail.com", href: "mailto:Chestonguardservices@gmail.com"}] },
                   { icon: MapPin, color: "#15803d", bg: "#f0fdf4", label: "Our Office", lines: [{text: "P.O. Box 82, Serem, Lavington Hope Center, Ambosel Road", href: null}] },
                 ].map((c, i) => (
                   <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: "rgba(255,255,255,0.05)" }}>
@@ -1495,7 +1495,7 @@ function Footer() {
             <div className="text-gray-500 text-xs space-y-1">
               <div>P.O. Box 82, Serem, Lavington Hope Center, Ambosel Road</div>
               <div><a href="tel:+254702396783" className="hover:text-red-400 transition-colors">+254 702 396 783</a> | <a href="tel:+254703573531" className="hover:text-red-400 transition-colors">+254 703 573 531</a></div>
-              <a href="mailto:info@chestonsecurity.co.ke" className="hover:text-red-400 transition-colors">info@chestonsecurity.co.ke</a>
+              <a href="mailto:Chestonguardservices@gmail.com" className="hover:text-red-400 transition-colors">Chestonguardservices@gmail.com</a>
             </div>
           </div>
           {Object.entries(links).map(([heading, items]) => (

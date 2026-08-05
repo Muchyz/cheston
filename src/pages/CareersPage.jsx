@@ -113,7 +113,7 @@ export default function CareersPage() {
                     {r.location}
                   </div>
                   <p className="text-gray-500 text-sm leading-relaxed mb-5">{r.desc}</p>
-                  <a href="mailto:info@chestonsecurity.co.ke?subject=Application: CHESTON Security"
+                  <a href="mailto:Chestonguardservices@gmail.com?subject=Application: CHESTON Security"
                     className="inline-flex items-center gap-2 text-sm font-semibold"
                     style={{ color: "#dc2626" }}>
                     Apply via Email <ArrowRight className="w-4 h-4" />
@@ -131,7 +131,7 @@ export default function CareersPage() {
                 <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "'DM Serif Display',serif" }}>How to Apply</h2>
                 <p className="text-white/80 mb-6 max-w-xl">Send your CV and a brief cover letter to our HR team. Please indicate the position you're applying for in the subject line.</p>
                 <div className="flex flex-wrap gap-4">
-                  <a href="mailto:info@chestonsecurity.co.ke?subject=Job Application - CHESTON Security"
+                  <a href="mailto:Chestonguardservices@gmail.com?subject=Job Application - CHESTON Security"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-white text-red-700 hover:-translate-y-0.5 transition-all shadow-md">
                     <Mail className="w-4 h-4" /> Email Your Application
                   </a>

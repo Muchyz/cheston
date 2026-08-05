@@ -66,7 +66,7 @@ export default function PrivacyPage() {
             },
             {
               title: "5. Your Rights",
-              content: "You have the right to access the personal information we hold about you, request correction of inaccurate information, request deletion of your information (subject to legal obligations), and withdraw consent where processing is based on consent. To exercise these rights, please contact us at info@chestonsecurity.co.ke."
+              content: "You have the right to access the personal information we hold about you, request correction of inaccurate information, request deletion of your information (subject to legal obligations), and withdraw consent where processing is based on consent. To exercise these rights, please contact us at Chestonguardservices@gmail.com."
             },
             {
               title: "6. Cookies & Website",
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
             },
             {
               title: "7. Contact Us About Privacy",
-              content: "If you have any questions about this Privacy Policy or our handling of your personal information, please contact us at: info@chestonsecurity.co.ke or write to CHESTON security solutions limited, P.O. Box 82, Serem, Lavington Hope Center, Ambosel Road."
+              content: "If you have any questions about this Privacy Policy or our handling of your personal information, please contact us at: Chestonguardservices@gmail.com or write to CHESTON security solutions limited, P.O. Box 82, Serem, Lavington Hope Center, Ambosel Road."
             },
             {
               title: "8. Changes to This Policy",

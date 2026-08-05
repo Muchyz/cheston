@@ -159,7 +159,7 @@ export default function ContactPage() {
                 <h3 className="text-white font-bold text-base tracking-wide">Get In Touch</h3>
                 {[
                   { icon: Phone, color: "#dc2626", bg: "#fef2f2", label: "Call Us", lines: [{ text: "+254 702 396 783", href: "tel:+254702396783" }, { text: "+254 703 573 531", href: "tel:+254703573531" }] },
-                  { icon: Mail, color: "#1e3a8a", bg: "#eff6ff", label: "Email Us", lines: [{ text: "chestonsecsolutions@gmail.com", href: "mailto:chestonsecsolutions@gmail.com" }, { text: "info@chestonsecurity.co.ke", href: "mailto:info@chestonsecurity.co.ke" }] },
+                  { icon: Mail, color: "#1e3a8a", bg: "#eff6ff", label: "Email Us", lines: [{ text: "Chestonguardservices@gmail.com", href: "mailto:Chestonguardservices@gmail.com" }, { text: "Chestonguardservices@gmail.com", href: "mailto:Chestonguardservices@gmail.com" }] },
                   { icon: MapPin, color: "#15803d", bg: "#f0fdf4", label: "Our Office", lines: [{ text: "P.O. Box 82, Serem, Lavington Hope Center, Ambosel Road", href: null }] },
                   { icon: Globe, color: "#b45309", bg: "#fffbeb", label: "Website", lines: [{ text: "www.chestonsecurity.co.ke", href: "https://www.chestonsecurity.co.ke" }] },
                 ].map((c, i) => (
