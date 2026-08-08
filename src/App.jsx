@@ -1626,8 +1626,38 @@ function HomePage() {
   );
 }
 
+/* ── PAUSED NOTICE ── */
+const SITE_PAUSED = true;
+
+function PausedNotice() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center"
+      style={{ background: "linear-gradient(180deg,#0f1216 0%,#14181d 100%)" }}>
+      <img src="/logo.png" alt="Cheston Security" style={{ height: "72px", objectFit: "contain" }} className="mb-8" />
+      <div className="h-px w-16 mb-6" style={{ background: "#c9973f" }} />
+      <h1 className="text-2xl sm:text-3xl text-white mb-4" style={{ fontFamily: "'Playfair Display',serif", fontWeight: 600 }}>
+        Website Temporarily Paused
+      </h1>
+      <p className="text-white/60 text-sm sm:text-base leading-relaxed max-w-md mb-2">
+        This website was developed by <span className="text-white/85 font-semibold">Muchyz Digital Agency</span> for Cheston Security Services Limited.
+      </p>
+      <p className="text-white/60 text-sm sm:text-base leading-relaxed max-w-md mb-8">
+        Access is currently paused pending settlement of the outstanding development balance.
+      </p>
+      <a href="https://wa.me/254705427449" target="_blank" rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 px-6 py-3 font-bold text-black text-sm tracking-wide"
+        style={{ background: "#c9973f" }}>
+        Contact Muchyz Digital Agency
+      </a>
+    </div>
+  );
+}
+
 /* ── APP ── */
 export default function App() {
+  if (SITE_PAUSED) {
+    return <PausedNotice />;
+  }
   return (
     <>
       <FontStyle />
